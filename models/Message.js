@@ -7,8 +7,8 @@ const MessageSchema = new Schema({
     dni: {type: Number},
     telephone: {type: Number},
     email: {type: String},
-    content: {type: String},
-    date: {type: Date, default: Date.now}
+    reason: {type: String},
+    comments: {type: String},
+    created_date: {type: Date, default: Date.now}
 });
-
 module.exports = mongoose.model('Message',MessageSchema);

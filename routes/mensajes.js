@@ -27,15 +27,9 @@ const data = require("../index");
 //   },
 // ];
 
-router.get("/mensajesTest", (req, res) => {
-  console.log(data.getMsg());
-  res.render("mensajesTest", { data: data.getMsg() });
-});
-
 router.get("/mensajes", async (req, res) => {
   const messages = await Message.find();
-  console.log(messages);
-  res.render("mensajes");
+  res.render("mensajes", {data: messages });
 });
 
 router.post("/crearMensaje", async (req, res) => {
@@ -43,13 +37,8 @@ router.post("/crearMensaje", async (req, res) => {
   await newMessage.save();
   res.status(200).send("ok");
 });
-let obj = {
-  firstName: { type: String, required: true },
-  lastName: { type: String, required: true },
-  dni: { type: Number },
-  telephone: { type: Number },
-  email: { type: String },
-  content: { type: String },
-  date: { type: Date, default: Date.now },
-};
+
 module.exports = router;
+
+module.exports = router;
+
