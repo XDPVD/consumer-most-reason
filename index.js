@@ -4,6 +4,9 @@ const routerMensajes = require("./routes/mensajes");
 // Initializations
 const app = express();
 require('dotenv').config();
+
+console.log(process.env.KAFKA_HOST)
+
 require("./database");
 require("./kafka");
 

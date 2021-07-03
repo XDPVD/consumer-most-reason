@@ -5,7 +5,7 @@ const Message = require("./models/Message");
 
 
 var consumer = new kafka.Consumer(client, [
-  { topic: "CVALLEJO", offset: 0, partition: 1 },
+  { topic: "CVALLEJO", offset: 0, partition: 0 },
 ]);
 
 consumer.on("message", function (message) {
